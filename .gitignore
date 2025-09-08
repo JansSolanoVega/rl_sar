@@ -12,3 +12,4 @@ __pycache__
 cmake_build
 
 package.xml
+gazebo_models_worlds_collection/

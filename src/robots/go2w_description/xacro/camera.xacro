@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >  
+    <gazebo reference="Head_upper">
+        <sensor type="camera" name="unitree_go2w/front_cam">
+        <update_rate>30.0</update_rate>
+        <camera name="head">
+            <pose>0.25 0 0.15 0 0 0</pose>
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+            </image>
+            <clip>
+            <near>0.02</near>
+            <far>300</far>
+            </clip>
+            <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+            </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>unitree_go2w/front_cam</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>Head_upper</frameName>
+        </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

@@ -338,7 +338,7 @@ endif()
 if(NOT USE_CMAKE)
     if($ENV{ROS_DISTRO} MATCHES "foxy|humble")
         install(
-            DIRECTORY launch worlds policy
+            DIRECTORY launch rviz worlds policy
             DESTINATION share/${PROJECT_NAME}/${dir}
         )
     endif()
