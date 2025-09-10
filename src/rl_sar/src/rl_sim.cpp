@@ -129,7 +129,7 @@ RL_Sim::RL_Sim()
 
     // subscriber
     this->cmd_vel_subscriber = this->create_subscription<geometry_msgs::msg::Twist>(
-        "/cmd_vel", rclcpp::SystemDefaultsQoS(),
+        "/unitree_go2w/cmd_vel", rclcpp::SystemDefaultsQoS(),
         [this] (const geometry_msgs::msg::Twist::SharedPtr msg) {this->CmdvelCallback(msg);}
     );
     this->joy_subscriber = this->create_subscription<sensor_msgs::msg::Joy>(
