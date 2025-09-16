@@ -739,6 +739,19 @@
       <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
     </inertial>
   </link>
+  <link name="lidar_frame">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.1" rpy="0 0 0" />
+    <parent link="trunk" />
+    <child link="lidar_frame" />
+    <axis xyz="0 0 0" />
+  </joint>
   <joint name="radar_joint" type="fixed">
     <origin xyz="0.28945 0 -0.046825" rpy="0 2.8782 0" />
     <parent link="trunk" />

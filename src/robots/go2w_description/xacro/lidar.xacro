@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
-    <gazebo reference="radar_link">
+    <gazebo reference="lidar_frame">
         <material>Gazebo/Red</material>
 
         <sensor type="ray" name="velodyne2-HDL32E">
@@ -43,7 +43,7 @@
               <remapping>~/out:=point_cloud</remapping>
             </ros>
 
-            <frame_name>radar_link</frame_name>
+            <frame_name>lidar_frame</frame_name>
             <organize_cloud>false</organize_cloud>
             <min_range>0.9</min_range>
             <max_range>130.0</max_range>
