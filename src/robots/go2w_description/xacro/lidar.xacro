@@ -1,9 +1,49 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
     <gazebo reference="lidar_frame">
-        <material>Gazebo/Red</material>
-
-        <sensor type="ray" name="velodyne2-HDL32E">
+        <sensor name="velodyne-VLP16" type="ray">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>false</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                <horizontal>
+                    <samples>440</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-3.141592653589793</min_angle>
+                    <max_angle>3.141592653589793</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>16</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-0.2617993877991494</min_angle>
+                    <max_angle>
+                        0.2617993877991494</max_angle>
+                </vertical>
+                </scan>
+                <range>
+                <min>0.3</min>
+                <max>131.0</max>
+                <resolution>0.001</resolution>
+                </range>
+                <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.0</stddev>
+                </noise>
+            </ray>
+            <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
+                <ros>
+                    <namespace>/unitree_go2w/lidar</namespace>
+                    <remapping>~/out:=point_cloud</remapping>
+                </ros>
+                <frameName>lidar_frame</frameName>
+                <min_range>0.9</min_range>
+                <max_range>130.0</max_range>
+                <gaussianNoise>0.008</gaussianNoise>
+            </plugin>
+        </sensor>
+        <!-- <sensor type="ray" name="velodyne2-HDL32E">
           <pose>0 0 0 0 0 0</pose>
           <visualize>false</visualize>
           <update_rate>10</update_rate>
@@ -49,7 +89,7 @@
             <max_range>130.0</max_range>
             <gaussian_noise>0.008</gaussian_noise>
           </plugin>
-        </sensor>
+        </sensor> -->
     </gazebo>
 
 </robot>

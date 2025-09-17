@@ -485,9 +485,9 @@ void RL_Sim::JoyCallback(
     if (this->joy_msg.buttons[5] && this->joy_msg.axes[6] < 0) this->control.SetGamepad(Input::Gamepad::RB_DPadLeft);
     if (this->joy_msg.buttons[4] && this->joy_msg.buttons[5]) this->control.SetGamepad(Input::Gamepad::LB_RB);
 
-    this->control.x = this->joy_msg.axes[1] * 1.5; // LY
-    this->control.y = this->joy_msg.axes[0] * 1.5; // LX
-    this->control.yaw = this->joy_msg.axes[3] * 1.5; // RX
+    this->control.x = this->joy_msg.axes[1] * 0.75; // LY
+    this->control.y = this->joy_msg.axes[0] * 0.75; // LX
+    this->control.yaw = this->joy_msg.axes[3] * 0.75; // RX
 }
 
 #if defined(USE_ROS1)

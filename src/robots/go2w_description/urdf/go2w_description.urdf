@@ -727,7 +727,7 @@
     </inertial>
   </link>
   <joint name="imu_joint" type="fixed">
-    <origin xyz="-0.02557 0 0.04232" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="trunk" />
     <child link="imu_link" />
     <axis xyz="0 0 0" />
@@ -740,11 +740,12 @@
     </inertial>
   </link>
   <link name="lidar_frame">
-    <inertial>
+    <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
-    </inertial>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
+      </geometry>
+    </visual>
   </link>
   <joint name="lidar_joint" type="fixed">
     <origin xyz="0.0 0.0 0.1" rpy="0 0 0" />
