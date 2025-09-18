@@ -15,7 +15,7 @@ from launch.substitutions import PathJoinSubstitution
 def generate_launch_description():
     rname = LaunchConfiguration("rname")
 
-    wname = "stairs"
+    wname = "test_zone"
     robot_name = ParameterValue(Command(["echo -n ", rname]), value_type=str)
     ros_namespace = ParameterValue(Command(["echo -n ", "/", rname, "_gazebo"]), value_type=str)
     gazebo_model_name = ParameterValue(Command(["echo -n ", rname, "_gazebo"]), value_type=str)
@@ -44,7 +44,7 @@ def generate_launch_description():
         launch_arguments={
             # "verbose": "true",
             # "pause": "true",  # Not Available
-            "world": '/home/zetans/IsaacLab/rl_sar/gazebo_models_worlds_collection/worlds/test_zone.world',#os.path.join(get_package_share_directory("rl_sar"), "worlds", wname + ".world"),
+            "world": os.path.join(get_package_share_directory("rl_sar"), "worlds", wname + ".world"),
         }.items(),
         
         # PythonLaunchDescriptionSource(

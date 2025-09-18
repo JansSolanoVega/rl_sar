@@ -742,9 +742,6 @@
   <link name="lidar_frame">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
-      </geometry>
     </visual>
   </link>
   <joint name="lidar_joint" type="fixed">

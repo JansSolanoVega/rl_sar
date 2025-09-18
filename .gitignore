@@ -10,6 +10,6 @@ log
 *.json
 __pycache__
 cmake_build
-
+*.ini
 package.xml
 gazebo_models_worlds_collection/

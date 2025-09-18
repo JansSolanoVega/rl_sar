@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro"/>
+    <xacro:mid360 name="livox" parent="base" topic="unitree_go2w/lidar">
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </xacro:mid360>
+</robot>
