@@ -243,6 +243,24 @@
             <parameters>$(find go2w_description)/config/robot_control_ros2.yaml</parameters>
         </plugin>
     </gazebo>
+    <!-- <gazebo>
+        <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>50.0</updateRate>
+            <bodyName>robot_model</bodyName>
+            <topicName>ground_truth/state</topicName>
+            <gaussianNoise>0.01</gaussianNoise>
+            <frameName>world</frameName>
+            <xyzOffsets>0 0 0</xyzOffsets>
+            <rpyOffsets>0 0 0</rpyOffsets>
+        </plugin>
+        <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+            <update_rate>50</update_rate>
+            <publish_model_states>true</publish_model_states>
+            <publish_link_states>true</publish_link_states>
+        </plugin>
+    </gazebo> -->
+
 
     </xacro:if>
 

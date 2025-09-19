@@ -27,5 +27,12 @@
     <physics type='ode'>
       <max_step_size>0.0018</max_step_size>
     </physics>
+    <plugin name="gazebo_ros_init" filename="libgazebo_ros_init.so"/>
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <publish_model_states>true</publish_model_states>
+      <publish_link_states>true</publish_link_states>
+      <update_rate>50</update_rate>
+    </plugin>
   </world>
 </sdf>
